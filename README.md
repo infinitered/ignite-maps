@@ -20,6 +20,6 @@ This generates a component at `./App/Components/StoreLocator.js`.
 
 ## License
 
-This plugin is licensed MIT and was created by Jamon Holmgren and Steve Kellock
-of Infinite Red, Inc.
+This plugin is licensed MIT by Infinite Red, Inc., and was created by
+Jamon Holmgren, Steve Kellock, and Robin Heinze.
 

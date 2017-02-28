@@ -1,0 +1,8 @@
+{
+  "name": "ignite-maps",
+  "description": "Ignite plugin that adds react-native-maps support.",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Infinite Red, Inc.",
+  "url": "https://github.com/infinitered/ignite-maps"
+}
