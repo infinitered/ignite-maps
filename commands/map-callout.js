@@ -8,14 +8,14 @@ module.exports = async function (context) {
 
   // validation
   if (isBlank(parameters.first)) {
-    print.info(`ignite generate map <name>\n`)
+    print.info(`ignite generate map-callout <name>\n`)
     print.info('A name is required.')
     return
   }
 
   const name = pascalCase(parameters.first)
 
-  // Copies the `map.js.ejs` in the templates folder
+  // Copies the callout template
   // into App/Components/${name}.js.
   const copyJobs = [{
     template: 'map-callout-component.js.ejs',
