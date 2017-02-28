@@ -28,12 +28,21 @@ const add = async function (context) {
   // add the app build gradle config
   ignite.patchInFile(`${APP_PATH}/android/app/build.gradle`, {
     insert: GRADLE_CONFIG,
-    replace: `    compile project\\(':react-native-maps'\\)`
+    replace: `\n    compile project(':react-native-maps')`
   })
+
+  // TODO: Add API key to 
+  // android/app/src/main/AndroidManifest.xml
+  // in <application>:
+  /*
+      <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyBcCdKMCWtxN1mXHlVE6z5cLVXIPWaEcso"/>
+   */
 }
 
 /**
- * Remove yourself from the project.
+ * Remove from the project.
  */
 const remove = async function (context) {
   const { ignite } = context
@@ -45,9 +54,11 @@ const remove = async function (context) {
 
   // Remove the app build gradle config we added
   ignite.patchInFile(`${APP_PATH}/android/app/build.gradle`, {
-    insert: '',
-    replace: GRADLE_CONFIG.replace('(', '\\(').replace(')', '\\)')
+    delete: GRADLE_CONFIG
   })
+
+  // TODO: Remove API key
+  // android/app/src/main/AndroidManifest.xml
 }
 
 module.exports = { add, remove }

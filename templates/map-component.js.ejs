@@ -1,24 +1,22 @@
 import React from 'react'
 import { View } from 'react-native'
 import MapView from 'react-native-maps'
-import MapCallout from '../Components/MapCallout'
+import <%= props.calloutName %> from './<%= props.calloutName %>'
 import Styles from './Styles/<%= props.name %>Styles'
 
-// Generate this file with `ignite generate map-utilities`
+// Generate this MapHelpers file with `ignite generate map-utilities`
 // You must have Ramda as a dev dependency to use this.
 // import { calculateRegion } from '../Lib/MapHelpers'
 
 /* ***********************************************************
 * IMPORTANT!!! Before you get started, if you are going to support Android,
 * PLEASE generate your own API key and add it to android/app/src/main/AndroidManifest.xml
-* We've included our API key for demonstration purposes only, and it will be regenerated from
-* time to time. As such, neglecting to complete this step could potentially break your app in production!
 * https://console.developers.google.com/apis/credentials
 * Also, you'll need to enable Google Maps Android API for your project:
 * https://console.developers.google.com/apis/api/maps_android_backend/
 *************************************************************/
 
-class <%= name %> extends React.Component {
+class <%= props.name %> extends React.Component {
   /* ***********************************************************
   * This generated code is only intended to get you started with the basics.
   * There are TONS of options available from traffic to buildings to indoors to compass and more!
@@ -94,12 +92,12 @@ class <%= name %> extends React.Component {
     /* ***********************************************************
     * STEP 6
     * Customize the appearance and location of the map marker.
-    * Customize the callout in ../Components/MapCallout.js
+    * Customize the callout in ./<%= props.calloutName %>.js
     *************************************************************/
 
     return (
       <MapView.Marker key={location.title} coordinate={{latitude: location.latitude, longitude: location.longitude}}>
-        <MapCallout location={location} onPress={this.calloutPress} />
+        <<%= props.calloutName %> location={location} onPress={this.calloutPress} />
       </MapView.Marker>
     )
   }
@@ -114,9 +112,9 @@ class <%= name %> extends React.Component {
       >
         {this.state.locations.map((location) => this.renderMapMarkers(location))}
       </MapView>
-\    )
+    )
   }
 }
 
-export default <%= name %>
+export default <%= props.name %>
 

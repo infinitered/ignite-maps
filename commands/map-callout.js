@@ -1,6 +1,6 @@
-// @cliDescription  Generates a map component.
-// @cliExample  ignite generate map StoreLocator
-// Generates a map component that can be inserted into any screen.
+// @cliDescription  Generates a map callout component.
+// @cliExample  ignite generate map-callout StoreCallout
+// Generates a map callout component that can be inserted into any map.
 // ----------------------------------------------------------------------------
 module.exports = async function (context) {
   const { parameters, strings, print, ignite } = context
@@ -14,24 +14,17 @@ module.exports = async function (context) {
   }
 
   const name = pascalCase(parameters.first)
-  const calloutName = `${name}Callout`
 
   // Copies the `map.js.ejs` in the templates folder
   // into App/Components/${name}.js.
   const copyJobs = [{
-    template: 'map-component.js.ejs',
+    template: 'map-callout-component.js.ejs',
     target: `App/Components/${name}.js`
   }, {
-    template: 'map-styles.js.ejs',
-    target: `App/Components/Styles/${name}Styles.js`
-  }, {
-    template: 'map-callout-component.js.ejs',
-    target: `App/Components/${calloutName}.js`
-  }, {
     template: 'map-callout-styles.js.ejs',
-    target: `App/Components/Styles/${calloutName}Styles.js`
+    target: `App/Components/Styles/${name}Styles.js`
   }]
 
   // make the templates and pass in props with the third argument here
-  await ignite.copyBatch(context, copyJobs, { name: name, calloutName: calloutName })
+  await ignite.copyBatch(context, copyJobs, { calloutName: name })
 }
