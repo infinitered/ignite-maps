@@ -37,7 +37,7 @@ test.before(async () => {
   jetpack.remove(RUN_DIR)
   jetpack.dir(RUN_DIR)
   process.chdir(RUN_DIR)
-  await execa('ignite', ['new', APP, '--min'], {
+  await execa('ignite', ['version'], {
     env: {
       IGNITE_PLUGIN_PATH: IGNITE_PATH
     }
