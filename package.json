@@ -16,7 +16,8 @@
   },
   "scripts": {
     "lint": "standard",
-    "test": "ava",
+    "test": "ava ./test/fast",
+    "integration": "ava -s ./test/integration",
     "watch": "ava --watch",
     "coverage": "nyc ava",
     "shipit": "np"
@@ -29,8 +30,12 @@
   "devDependencies": {
     "ava": "^0.18.2",
     "babel-eslint": "^7.1.1",
+    "execa": "^0.6.0",
+    "fs-jetpack": "^0.12.0",
     "np": "^2.12.0",
     "nyc": "^10.1.2",
+    "path": "^0.12.7",
+    "shelljs": "^0.7.6",
     "sinon": "^1.17.7",
     "standard": "^8.6.0"
   }

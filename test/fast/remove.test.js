@@ -1,6 +1,6 @@
 const test = require('ava')
 const sinon = require('sinon')
-const plugin = require('../index')
+const plugin = require('../../index')
 
 test('removes maps', async t => {
   const removeModule = sinon.spy()

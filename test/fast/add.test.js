@@ -1,6 +1,6 @@
 const test = require('ava')
 const sinon = require('sinon')
-const plugin = require('../index')
+const plugin = require('../../index')
 
 test('adds the proper npm module, component example, patches a file', async t => {
   // spy on few things so we know they're called
