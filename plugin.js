@@ -23,7 +23,7 @@ const add = async function (context) {
   // install a npm module and link it
   await ignite.addModule(NPM_MODULE_NAME, { version: NPM_MODULE_VERSION, link: true })
   // add our component example to the plugin component examples screen
-  await ignite.addComponentExample(EXAMPLE_FILE, { title: 'Maps Example' })
+  await ignite.addPluginComponentExample(EXAMPLE_FILE, { title: 'Maps Example' })
 
   // add the app build gradle config
   ignite.patchInFile(`${APP_PATH}/android/app/build.gradle`, {
@@ -50,7 +50,7 @@ const remove = async function (context) {
   // remove the npm module and unlink it
   await ignite.removeModule(NPM_MODULE_NAME, { unlink: true })
   // remove our component example from the plugin component examples screen
-  await ignite.removeComponentExample(EXAMPLE_FILE)
+  await ignite.removePluginComponentExample(EXAMPLE_FILE)
 
   // Remove the app build gradle config we added
   ignite.patchInFile(`${APP_PATH}/android/app/build.gradle`, {
