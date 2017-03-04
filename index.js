@@ -31,7 +31,7 @@ const add = async function (context) {
     replace: `\n    compile project(':react-native-maps')`
   })
 
-  // TODO: Add API key to 
+  // TODO: Add API key to
   // android/app/src/main/AndroidManifest.xml
   // in <application>:
   /*
