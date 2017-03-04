@@ -1,21 +1,21 @@
 const test = require('ava')
 const sinon = require('sinon')
-const plugin = require('../index')
+const plugin = require('../plugin')
 
 test('removes maps', async t => {
   const removeModule = sinon.spy()
-  const removeComponentExample = sinon.spy()
+  const removePluginComponentExample = sinon.spy()
   const confirm = sinon.stub().returns(true)
   const patchInFile = sinon.spy()
 
   const context = {
-    ignite: { removeModule, removeComponentExample, patchInFile }
+    ignite: { removeModule, removePluginComponentExample, patchInFile }
   }
 
   await plugin.remove(context)
 
   t.true(removeModule.calledWith('react-native-maps', { unlink: true }))
-  t.true(removeComponentExample.calledWith('MapsExample.js'))
+  t.true(removePluginComponentExample.calledWith('MapsExample.js'))
 
   // Gradle unpatching
   t.true(patchInFile.called)
