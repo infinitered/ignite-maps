@@ -3,7 +3,7 @@
 
 const NPM_MODULE_NAME = 'react-native-maps'
 const NPM_MODULE_VERSION = '0.13.0'
-const PLAY_SERVICES_VERSION = '9.6.1'
+const PLAY_SERVICES_VERSION = '10.2.0'
 // const PLUGIN_PATH = __dirname
 const APP_PATH = process.cwd()
 const EXAMPLE_FILE = 'MapsExample.js'
