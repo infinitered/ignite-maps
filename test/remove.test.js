@@ -5,7 +5,6 @@ const plugin = require('../plugin')
 test('removes maps', async t => {
   const removeModule = sinon.spy()
   const removePluginComponentExample = sinon.spy()
-  const confirm = sinon.stub().returns(true)
   const patchInFile = sinon.spy()
 
   const context = {
