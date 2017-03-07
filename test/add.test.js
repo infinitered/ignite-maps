@@ -6,8 +6,6 @@ test('adds the proper npm module, component example, patches a file', async t =>
   // spy on few things so we know they're called
   const addModule = sinon.spy()
   const addPluginComponentExample = sinon.spy()
-  const exists = sinon.stub().returns(false)
-  const copy = sinon.spy()
   const patchInFile = sinon.spy()
 
   // mock a context
