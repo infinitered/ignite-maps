@@ -25,6 +25,10 @@ This adds `ignite-maps` and generates a component at `./App/Components/StoreLoca
 5. Write tests for those changes
 6. Submit a pull request back upstream
 
+## Premium Support
+
+[Ignite](https://infinite.red/ignite) and [ignite-maps](https://github.com/infinitered/ignite-maps), as open source projects, are free to use and always will be. [Infinite Red](https://infinite.red/) offers premium Ignite and ignite-maps support and general mobile app design/development services. Email us at [hello@infinite.red](mailto:hello@infinite.red) to get in touch with us for more details.
+
 ## License
 
 This plugin is licensed MIT by Infinite Red, Inc., and was created by
