@@ -1,5 +1,7 @@
 # Ignite Maps Plugin
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/infinitered/ignite-maps.svg)](https://greenkeeper.io/)
+
 This plugin adds [react-native-maps](https://github.com/airbnb/react-native-maps)
 to your [Ignite](https://github.com/infinitered/ignite) React Native project and
 configures it so it works out of the box with Ignite projects. It also includes
