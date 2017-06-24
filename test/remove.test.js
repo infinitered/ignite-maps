@@ -14,7 +14,7 @@ test('removes maps', async t => {
   await plugin.remove(context)
 
   t.true(removeModule.calledWith('react-native-maps', { unlink: true }))
-  t.true(removePluginComponentExample.calledWith('MapsExample.js'))
+  t.true(removePluginComponentExample.calledWith('MapsExample.js.ejs'))
 
   // Gradle unpatching
   t.true(patchInFile.called)
