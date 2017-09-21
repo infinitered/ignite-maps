@@ -21,7 +21,7 @@ test('adds the proper npm module, component example, patches a file', async t =>
 
   await plugin.add(context)
   t.true(
-    addModule.calledWith('react-native-maps', { version: '0.13.0', link: true })
+    addModule.calledWith('react-native-maps', { version: '0.16.4', link: true })
   )
   t.true(
     addPluginComponentExample.calledWith('MapsExample.js.ejs', {
