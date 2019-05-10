@@ -1,7 +1,7 @@
 {
   "name": "ignite-maps",
   "description": "Ignite plugin that adds react-native-maps support.",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "license": "MIT",
   "files": [
     "commands",
