@@ -2,34 +2,16 @@
 // ----------------------------------------------------------------------------
 
 const NPM_MODULE_NAME = 'react-native-maps'
-const NPM_MODULE_VERSION = '0.16.4'
-const PLAY_SERVICES_VERSION = '16.1.0'
-// const PLUGIN_PATH = __dirname
-const APP_PATH = process.cwd()
+const NPM_MODULE_VERSION = '0.26.1'
 const EXAMPLE_FILE = 'MapsExample.js.ejs'
-
-const GRADLE_CONFIG = `
-    compile(project(':react-native-maps')) {
-        exclude group: 'com.google.android.gms', module: 'play-services-base'
-        exclude group: 'com.google.android.gms', module: 'play-services-maps'
-    }
-    compile 'com.google.android.gms:play-services-base:${PLAY_SERVICES_VERSION}'
-    compile 'com.google.android.gms:play-services-maps:${PLAY_SERVICES_VERSION}'
-`
 
 const add = async function (context) {
   const { ignite, print } = context
 
   // install a npm module and link it
-  await ignite.addModule(NPM_MODULE_NAME, { version: NPM_MODULE_VERSION, link: true })
+  await ignite.addModule(NPM_MODULE_NAME, { version: NPM_MODULE_VERSION, link: false })
   // add our component example to the plugin component examples screen
   await ignite.addPluginComponentExample(EXAMPLE_FILE, { title: 'Maps Example' })
-
-  // add the app build gradle config
-  ignite.patchInFile(`${APP_PATH}/android/app/build.gradle`, {
-    insert: GRADLE_CONFIG,
-    replace: `\n    compile project(':react-native-maps')`
-  })
 
   print.warning(`⚠️  Using Google Maps on Android? ⚠️`)
   print.info('')
@@ -56,14 +38,9 @@ const remove = async function (context) {
   const { ignite } = context
 
   // remove the npm module and unlink it
-  await ignite.removeModule(NPM_MODULE_NAME, { unlink: true })
+  await ignite.removeModule(NPM_MODULE_NAME, { unlink: false })
   // remove our component example from the plugin component examples screen
   await ignite.removePluginComponentExample(EXAMPLE_FILE)
-
-  // Remove the app build gradle config we added
-  ignite.patchInFile(`${APP_PATH}/android/app/build.gradle`, {
-    delete: GRADLE_CONFIG
-  })
 
   // TODO: Remove API key
   // android/app/src/main/AndroidManifest.xml
