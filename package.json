@@ -1,7 +1,7 @@
 {
   "name": "ignite-maps",
   "description": "Ignite plugin that adds react-native-maps support.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "files": [
     "commands",
@@ -30,12 +30,12 @@
   "repository": "infinitered/ignite-maps",
   "devDependencies": {
     "@semantic-release/git": "^7.0.5",
-    "ava": "^0.18.2",
+    "ava": "^3.1.0",
     "babel-eslint": "^7.1.1",
-    "nyc": "^10.1.2",
-    "ramda": "^0.23.0",
-    "semantic-release": "^15.12.5",
-    "sinon": "^1.17.7",
+    "nyc": "^15.0.0",
+    "ramda": "^0.26.1",
+    "semantic-release": "^17.0.2",
+    "sinon": "^8.1.1",
     "standard": "^9.0.0"
   },
   "release": {
