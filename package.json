@@ -30,11 +30,11 @@
   "repository": "infinitered/ignite-maps",
   "devDependencies": {
     "@semantic-release/git": "^7.0.5",
-    "ava": "^3.1.0",
+    "ava": "^2.4.0",
     "babel-eslint": "^7.1.1",
     "nyc": "^15.0.0",
     "ramda": "^0.26.1",
-    "semantic-release": "^17.0.2",
+    "semantic-release": "^15.13.30",
     "sinon": "^8.1.1",
     "standard": "^9.0.0"
   },
