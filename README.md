@@ -1,5 +1,9 @@
 # Ignite Maps Plugin
 
+## Why is this archived?
+
+We really appreciate all the community support in the years since we first released ignite-maps. Our focus has shifted to the latest version of [Ignite](https://github.com/infinitered/ignite), which does not have a plugin-based architecture ([read more here](https://shift.infinite.red/introducing-ignite-4-0-flame-1dfc891f9966)). Feel free to fork this library and continue on its legacy if you want. 
+
 This plugin adds [react-native-maps](https://github.com/airbnb/react-native-maps)
 to your [Ignite](https://github.com/infinitered/ignite) React Native project and
 configures it so it works out of the box with Ignite projects. It also includes
