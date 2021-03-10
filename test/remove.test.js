@@ -5,19 +5,13 @@ const plugin = require('../plugin')
 test('removes maps', async t => {
   const removeModule = sinon.spy()
   const removePluginComponentExample = sinon.spy()
-  const patchInFile = sinon.spy()
 
   const context = {
-    ignite: { removeModule, removePluginComponentExample, patchInFile }
+    ignite: { removeModule, removePluginComponentExample }
   }
 
   await plugin.remove(context)
 
-  t.true(removeModule.calledWith('react-native-maps', { unlink: true }))
+  t.true(removeModule.calledWith('react-native-maps', { unlink: false }))
   t.true(removePluginComponentExample.calledWith('MapsExample.js.ejs'))
-
-  // Gradle unpatching
-  t.true(patchInFile.called)
-  t.is(patchInFile.args[0][0], `${process.cwd()}/android/app/build.gradle`)
-  t.true(patchInFile.args[0][1].delete.length > 0)
 })
